@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <map>
 #include "hed.h"
 #include "Point.h"
 
@@ -16,7 +17,12 @@ class Mesh {
 
     Topo::Solid mSolid{};
 
+    int vertexPivot = -1;
+
+    std::map<int, double> getInternalBoundary();
+
 public:
+
     explicit Mesh(std::vector<Point>& pts);
 
 };

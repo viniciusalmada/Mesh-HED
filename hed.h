@@ -21,6 +21,7 @@ namespace Topo {
         int edge = -1;
         int face = -1;
         int next = -1;
+        int prev = -1;
     };
 
     class Edge {
@@ -82,8 +83,16 @@ namespace Topo {
             mHalfEdge[he].next = next;
         }
 
+        void setPrevOfHalfEdge(int he, int prev) {
+            mHalfEdge[he].prev = prev;
+        }
+
         void setFaceOfHalfEdge(int he, int face) {
             mHalfEdge[he].face = face;
+        }
+
+        int getHeFromFace(int face) {
+            return mFace[face].he;
         }
     };
 
